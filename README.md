@@ -47,7 +47,7 @@ data.info()
 data = pd.DataFrame(data)
 data = data.drop(data[data['Year'] > 2016].index)
 data = data.dropna(axis=0)
-data = data.drop("Rank", 1)
+data = data.drop("Rank", axis=1)
 data['Year'] = data['Year'].astype('int64')
 
 b = data.shape[0]
@@ -59,10 +59,6 @@ print(
 ```
 
     We removed 311 records from data by processing, leaving us with 16287 records
-    
-
-    C:\Users\Michal\AppData\Local\Temp/ipykernel_4152/1058920395.py:5: FutureWarning: In a future version of pandas all arguments of DataFrame.drop except for the argument 'labels' will be keyword-only
-      data = data.drop("Rank", 1)
     
 
 
