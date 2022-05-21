@@ -5,9 +5,9 @@ Data fetched from Kaggle: https://www.kaggle.com/datasets/gregorut/videogamesale
 
 ```python
 #Imports
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import seaborn as sns
 %matplotlib inline
 ```
@@ -16,7 +16,7 @@ import seaborn as sns
 ```python
 #Loading data
 data = pd.read_csv("VidyaNoRat.csv")
-a = data.shape[0]
+DataRaw = data.shape[0]
 
 data.info()
 ```
@@ -50,11 +50,11 @@ data = data.dropna(axis=0)
 data = data.drop("Rank", axis=1)
 data['Year'] = data['Year'].astype('int64')
 
-b = data.shape[0]
-Diff = a - b
+DataProcessed = data.shape[0]
+Diff = DataRaw - DataProcessed
 
 print(
-    f'We removed {Diff} records from data by processing, leaving us with {b} records'
+    f'We removed {Diff} records from data by processing, leaving us with {DataProcessed} records'
 )
 ```
 
